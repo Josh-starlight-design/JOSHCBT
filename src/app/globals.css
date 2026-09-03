@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --brand-primary: #1e3a5f;
+  --brand-secondary: #2563eb;
+  --brand-accent: #0ea5e9;
+  --brand-name: "CBT PRO";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Ensure exam interface is crisp */
+.exam-interface {
+  user-select: none;
+}
+
+/* Answer option hover states */
+.answer-option {
+  transition: all 0.15s ease;
+}
+
+.answer-option:hover {
+  transform: translateY(-1px);
+}
+
+/* Timer pulse animation for warnings */
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.timer-warning {
+  animation: pulse-red 1s ease-in-out infinite;
+}
+
+/* Question palette button styles */
+.q-btn-unanswered {
+  background: #e2e8f0;
+  color: #64748b;
+  border: 2px solid #cbd5e1;
+}
+
+.q-btn-answered {
+  background: #dcfce7;
+  color: #166534;
+  border: 2px solid #86efac;
+}
+
+.q-btn-flagged {
+  background: #fef3c7;
+  color: #92400e;
+  border: 2px solid #fcd34d;
+}
+
+.q-btn-current {
+  background: #1e3a5f;
+  color: white;
+  border: 2px solid #1e3a5f;
+  transform: scale(1.05);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+}
